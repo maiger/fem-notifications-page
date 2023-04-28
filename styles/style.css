@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* ---------- VARIABLES ---------- */
+:root {
+  /* COLORS */
+  /* PRIMARY */
+  --color-primary-1: hsl(1, 90%, 64%);
+  --color-primary-2: hsl(219, 85%, 26%);
+  /* NEUTRAL */
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-grey-1: hsl(210, 60%, 98%);
+  --color-neutral-grey-2: hsl(211, 68%, 94%);
+  --color-neutral-grey-3: hsl(205, 33%, 90%);
+  --color-neutral-grey-4: hsl(219, 14%, 63%);
+  --color-neutral-grey-5: hsl(219, 12%, 42%);
+  --color-neutral-grey-6: hsl(224, 21%, 14%);
+  /* TEXT */
+  --text-heading-size-1: 2.2rem;
+  --text-heading-size-2: 2rem;
+  --text-heading-size-3: 1.8rem;
+  --text-para-size: 1.6rem;
+  --text-sans-serif-font: "Plus Jakarta Sans", sans-serif;
+  --text-weight-medium: 500;
+  --text-weight-extrabold: 800;
+}
+
+/* ---------- BASE STYLES ---------- */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: var(--text-sans-serif-font);
+  font-weight: var(--text-weight-medium);
+  font-size: var(--text-para-size);
+}
+
+footer {
+  margin-top: 5rem;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: hsl(228, 100%, 87%);
+}
+@media (max-width: 1150px) {
+  footer {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  body {
+    place-content: start;
+  }
+}
+
+html {
+  background-color: var(--color-neutral-grey-1);
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 550px) {
+  html {
+    background-color: var(--color-neutral-white);
+  }
+}
+
+.container {
+  max-width: 70rem;
+  background-color: var(--color-neutral-white);
+  padding: 3rem;
+  border-radius: 20px;
+  color: var(--color-neutral-grey-5);
+}
+@media (max-width: 550px) {
+  .container {
+    border-radius: 0;
+    padding: 2rem;
+  }
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.topbar__wrapper {
+  display: flex;
+  align-items: center;
+}
+.topbar__title {
+  color: var(--color-neutral-grey-6);
+  font-size: var(--text-heading-size-1);
+}
+.topbar__unread {
+  padding: 3px 12px;
+  margin-left: 1rem;
+  color: var(--color-neutral-white);
+  background-color: var(--color-primary-2);
+  border-radius: 5px;
+}
+.topbar__mark-all-read {
+  font-family: var(--text-sans-serif-font);
+  font-weight: var(--text-weight-medium);
+  color: var(--color-neutral-grey-5);
+  border: none;
+  background-color: var(--color-neutral-white);
+  cursor: pointer;
+}
+.topbar__mark-all-read:hover {
+  color: var(--color-primary-2);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.messages__notification {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  transition: background-color 1s;
+}
+.messages__avatar img {
+  width: 5rem;
+  margin: 1.5rem;
+}
+.messages__author {
+  color: var(--color-neutral-grey-6);
+  font-weight: var(--text-weight-extrabold);
+  cursor: pointer;
+}
+.messages__author:hover {
+  color: var(--color-primary-2);
+}
+.messages__link {
+  color: var(--color-neutral-grey-5);
+  font-weight: var(--text-weight-extrabold);
+}
+.messages__link:hover {
+  color: var(--color-primary-2);
+}
+.messages__link--join-leave {
+  color: var(--color-primary-2);
+  font-weight: var(--text-weight-extrabold);
+}
+.messages__timestamp {
+  color: var(--color-neutral-grey-4);
+}
+.messages__image {
+  width: 50px;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+}
+.messages__private {
+  float: right;
+  width: 88%;
+  display: block;
+  padding: 2rem;
+  border: 1px solid var(--color-neutral-grey-3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s, border 0.1s;
+}
+.messages__private:hover {
+  background-color: var(--color-neutral-grey-2);
+  border: 1px solid var(--color-neutral-grey-2);
+}
+@media (max-width: 550px) {
+  .messages__private {
+    width: 82%;
+  }
+}
+.messages__dot::after {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary-1);
+  margin-left: 4px;
+  transform: translateY(-2px);
+}
+.messages .unread {
+  background-color: var(--color-neutral-grey-1);
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
